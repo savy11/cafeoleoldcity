@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order Cafe Ole's delicious Mediterranean food online. Available on Uber Eats, Grubhub, DoorDash. Fresh shakshuka, shawarma, sandwiches delivered to your door.">
+    <title>Order Online | Cafe Ole Old City – Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .order-hero-section {
+            padding: 160px 0 80px;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(200, 129, 58, 0.2) 0%, transparent 60%),
+                var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .order-hero-section h1 { margin-bottom: 16px; }
+        .order-options-section { background: var(--color-bg); }
+        .order-platform-card {
+            background: var(--color-bg-card);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 48px 36px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .order-platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        .order-platform-card:hover { transform: translateY(-10px); border-color: rgba(200,129,58,0.5); box-shadow: var(--shadow-glow), var(--shadow-lg); }
+        .order-platform-card:hover::before { transform: scaleX(1); }
+        .order-platform-card.featured { border-color: rgba(200,129,58,0.5); background: linear-gradient(135deg, var(--color-bg-card), rgba(200,129,58,0.05)); }
+        .order-platform-card.featured::before { transform: scaleX(1); }
+        .platform-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--color-primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+        }
+        .platform-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+        .platform-name { font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-text); margin-bottom: 8px; }
+        .platform-desc { color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 28px; }
+        .platform-eta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.2);
+            color: #4CAF50;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .order-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .popular-items-section { background: var(--color-bg-card); }
+        .popular-items-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .popular-item-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .popular-item-card:hover { transform: translateY(-4px); border-color: rgba(200,129,58,0.3); }
+        .popular-item-card img { width: 100%; height: 140px; object-fit: cover; }
+        .popular-item-info { padding: 16px; }
+        .popular-item-info h4 { font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-text); margin-bottom: 4px; }
+        .popular-item-info span { font-size: 0.9rem; color: var(--color-primary); font-weight: 600; }
+        .order-info-strip { background: var(--color-secondary); padding: 48px 0; }
+        .order-info-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; }
+        .order-info-item { text-align: center; color: white; }
+        .order-info-item i { font-size: 2rem; color: var(--color-accent); margin-bottom: 12px; display: block; }
+        .order-info-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .order-info-item p { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+        @media (max-width: 768px) {
+            .order-grid { grid-template-columns: 1fr; }
+            .popular-items-row { grid-template-columns: repeat(2, 1fr); }
+            .order-info-row { gap: 32px; }
+        }
+        @media (max-width: 480px) {
+            .popular-items-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <div class="logo-text">
+                    <span class="logo-main">Cafe Ole</span>
+                    <span class="logo-sub">Old City · Philadelphia</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="order.html" class="nav-link nav-cta active">Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Order Hero -->
+    <section class="order-hero-section">
+        <div class="container">
+            <span class="page-hero-badge">🛵 Fast Delivery</span>
+            <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">Order <span class="accent">Online</span></h1>
+            <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px;">
+                Enjoy authentic Mediterranean flavors from Cafe Olé delivered to your door. Order through your favorite delivery platform or call us for pickup.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <div class="info-chip" style="font-size: 0.9rem;">
+                    <i class="fas fa-clock"></i> 30-45 min delivery
+                </div>
+                <div class="info-chip" style="font-size: 0.9rem;">
+                    <i class="fas fa-map-marker-alt"></i> Old City, Philadelphia
+                </div>
+                <div class="info-chip" style="font-size: 0.9rem;">
+                    <i class="fas fa-star" style="color: #FFB800;"></i> 4.8 Rating
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Info Strip -->
+    <div class="order-info-strip">
+        <div class="container">
+            <div class="order-info-row">
+                <div class="order-info-item">
+                    <i class="fas fa-leaf"></i>
+                    <h4>100% Fresh</h4>
+                    <p>Made to order every time</p>
+                </div>
+                <div class="order-info-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>30-45 minutes average</p>
+                </div>
+                <div class="order-info-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Call Ahead</h4>
+                    <p>(215) 627-2140</p>
+                </div>
+                <div class="order-info-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Open Daily</h4>
+                    <p>8:00 AM – 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Platforms -->
+    <section class="section order-options-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Choose Your Platform</span>
+                <h2 class="section-title">Order Through <span class="accent">Your Favorite App</span></h2>
+                <p class="section-desc">Available on all major delivery platforms in the Philadelphia area</p>
+            </div>
+            <div class="order-grid">
+                <div class="order-platform-card featured">
+                    <span class="platform-badge">⭐ Top Rated</span>
+                    <span class="platform-icon">🛵</span>
+                    <div class="platform-name">Uber Eats</div>
+                    <div class="platform-eta"><i class="fas fa-clock"></i> 30-40 min</div>
+                    <p class="platform-desc">Order directly through the Uber Eats app or website. Track your delivery in real-time with live GPS updates.</p>
+                    <a href="https://www.ubereats.com/store/cafe-ole/philadelphia" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center;" id="ubereats-order-btn">
+                        <i class="fas fa-external-link-alt"></i> Order on Uber Eats
+                    </a>
+                </div>
+
+                <div class="order-platform-card">
+                    <span class="platform-icon">🍴</span>
+                    <div class="platform-name">Grubhub</div>
+                    <div class="platform-eta"><i class="fas fa-clock"></i> 35-45 min</div>
+                    <p class="platform-desc">Order on Grubhub for fast delivery. Use your existing Grubhub account and earn loyalty rewards on every order.</p>
+                    <a href="https://www.grubhub.com/restaurant/cafe-ole-philadelphia" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; justify-content: center;" id="grubhub-order-btn">
+                        <i class="fas fa-external-link-alt"></i> Order on Grubhub
+                    </a>
+                </div>
+
+                <div class="order-platform-card">
+                    <span class="platform-icon">🚪</span>
+                    <div class="platform-name">DoorDash</div>
+                    <div class="platform-eta"><i class="fas fa-clock"></i> 30-45 min</div>
+                    <p class="platform-desc">Order on DoorDash and get your Mediterranean favorites delivered to any address in Philadelphia and surrounding areas.</p>
+                    <a href="https://www.doordash.com/store/cafe-ole-philadelphia" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; justify-content: center;" id="doordash-order-btn">
+                        <i class="fas fa-external-link-alt"></i> Order on DoorDash
+                    </a>
+                </div>
+            </div>
+
+            <!-- Call to order -->
+            <div style="text-align: center; margin-top: 48px; padding: 40px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 12px; color: var(--color-text);">
+                    Prefer to Order by Phone?
+                </h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 24px;">
+                    Call us directly to place your order for pickup or delivery
+                </p>
+                <a href="tel:+12156272140" class="btn btn-primary btn-lg" id="phone-order-btn">
+                    <i class="fas fa-phone"></i> Call (215) 627-2140
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Items to Order -->
+    <section class="section popular-items-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Most Ordered</span>
+                <h2 class="section-title">Customer <span class="accent">Favorites</span></h2>
+                <p class="section-desc">Our most loved dishes — perfect for delivery or pickup</p>
+            </div>
+            <div class="popular-items-row">
+                <div class="popular-item-card">
+                    <img src="images/shakshuka_hero.png" alt="Classic Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=300&q=80'">
+                    <div class="popular-item-info">
+                        <h4>Classic Shakshuka</h4>
+                        <span>$14.25</span>
+                    </div>
+                </div>
+                <div class="popular-item-card">
+                    <img src="images/shawarma_dish.png" alt="Shawarma Platter" onerror="this.src='https://images.unsplash.com/photo-1561651188-d207bbec4ec3?w=300&q=80'">
+                    <div class="popular-item-info">
+                        <h4>Shawarma Platter</h4>
+                        <span>$19.95</span>
+                    </div>
+                </div>
+                <div class="popular-item-card">
+                    <img src="images/mediterranean_spread.png" alt="Hummus Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1540914124281-342587941389?w=300&q=80'">
+                    <div class="popular-item-info">
+                        <h4>Hummus Shakshuka</h4>
+                        <span>$18.25</span>
+                    </div>
+                </div>
+                <div class="popular-item-card">
+                    <img src="images/latte_art.png" alt="Artisan Latte" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80'">
+                    <div class="popular-item-info">
+                        <h4>Artisan Latte</h4>
+                        <span>$5.50</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 36px;">
+                <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo"><span>☕</span> Cafe Olé</a>
+                        <p>Authentic Mediterranean cafe & brunch in the heart of Old City Philadelphia.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Our Menu</h4>
+                        <ul>
+                            <li><a href="menu.html#shakshuka">Shakshuka</a></li>
+                            <li><a href="menu.html#shawarma">Shawarma</a></li>
+                            <li><a href="menu.html#sandwiches">Sandwiches</a></li>
+                            <li><a href="menu.html#coffee">Coffee & Drinks</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 147 N 3rd St, Philadelphia, PA 19106</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12156272140">(215) 627-2140</a></p>
+                        <p><i class="fas fa-clock"></i> Mon–Sun: 8:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Cafe Olé Old City. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html>

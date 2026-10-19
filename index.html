@@ -1,148 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Ole | Philadelphia</title>
+    <meta name="description" content="Cafe Ole Old City - Authentic Mediterranean cafe & brunch spot in Old City Philadelphia. Famous for shakshuka, shawarma, artisan coffee, and fresh-baked breads. Visit us at 147 N 3rd St, Philadelphia, PA 19106.">
+    <meta name="keywords" content="Cafe Ole, Philadelphia cafe, Mediterranean food, shakshuka, shawarma, Old City Philadelphia, brunch, breakfast, vegan options, artisan coffee">
+    <meta property="og:title" content="Cafe Ole Old City | Mediterranean Cafe & Brunch – Philadelphia">
+    <meta property="og:description" content="Experience authentic Mediterranean flavors in the heart of Old City Philadelphia. Fresh shakshuka, shawarma, and artisan coffee daily.">
+    <meta property="og:type" content="restaurant">
+    <title>Cafe Ole Old City | Mediterranean Cafe & Brunch – Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Cafe Ole</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- =================== NAVIGATION =================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <div class="logo-text">
+                    <span class="logo-main">Cafe Ole</span>
+                    <span class="logo-sub">Old City · Philadelphia</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="order.html" class="nav-link nav-cta">Order Now</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- =================== HERO =================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <img src="images/shakshuka_hero.png" alt="Shakshuka at Cafe Ole" class="hero-img" onerror="this.style.display='none'">
+        </div>
         <div class="hero-content">
-            <h2>Welcome to Cafe Ole</h2>
-            <p>Your cozy coffee shop serving snacks & Mediterranean fare in the heart of Old City, Philadelphia.</p>
-            <a href="#menu" class="btn">Explore Our Menu</a>
+            <div class="hero-badge animate-fade-up">
+                <span>⭐ 4.8 Stars · Old City Philadelphia</span>
+            </div>
+            <p class="hero-script animate-fade-up delay-1">Welcome to</p>
+            <h1 class="hero-title animate-fade-up delay-2">
+                Cafe <span class="accent">Olé</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-3">
+                Authentic Mediterranean Flavors in the Heart of Old City Philadelphia
+            </p>
+            <p class="hero-tagline animate-fade-up delay-4">
+                Famous for our Shakshuka · Shawarma · Artisan Coffee · Fresh-Baked Breads
+            </p>
+            <div class="hero-btns animate-fade-up delay-5">
+                <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+                <a href="order.html" class="btn btn-outline">Order Online</a>
+            </div>
+            <div class="hero-info animate-fade-up delay-6">
+                <div class="info-chip">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon–Sun: 8AM – 6PM</span>
+                </div>
+                <div class="info-chip">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>147 N 3rd St, Philadelphia</span>
+                </div>
+                <div class="info-chip">
+                    <i class="fas fa-phone"></i>
+                    <span>(215) 627-2140</span>
+                </div>
+            </div>
         </div>
+        <a href="#features" class="scroll-down" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>Located at 147 N 3rd St, Cafe Ole is a cozy neighborhood eatery with a warm, inviting atmosphere and
-                    brightly colored walls. Whether you're craving our famous House Special Shakshuka, a rich Nutella
-                    Latte, or fresh Mediterranean platters, we have something for everyone. We also offer great outdoor
-                    seating and are dog-friendly!</p>
+    <!-- =================== FEATURES STRIP =================== -->
+    <section class="features-strip" id="features">
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">🥚</div>
+                <h3>Signature Shakshuka</h3>
+                <p>Our legendary shakshuka — eggs poached in rich spiced tomato sauce, served with fresh-baked bread</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">🥙</div>
+                <h3>Authentic Shawarma</h3>
+                <p>Slow-roasted chicken, turkey & lamb wrapped in warm pita with Israeli salad, hummus & tahini</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">☕</div>
+                <h3>Artisan Coffee</h3>
+                <p>Expertly crafted lattes, chai teas & iced coffees with plant-based milk alternatives available</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">🌱</div>
+                <h3>Vegan Friendly</h3>
+                <p>Extensive vegan & vegetarian options including tofu shakshuka and plant-based substitutes</p>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu">
+    <!-- =================== ABOUT SECTION =================== -->
+    <section class="about-home section" id="about">
         <div class="container">
-            <h2 class="section-title">Menu Highlights</h2>
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="img-stack">
+                        <img src="images/cafe_interior.png" alt="Cafe Ole Interior" class="img-main" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80'">
+                        <img src="images/latte_art.png" alt="Artisan Coffee" class="img-secondary" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80'">
+                        <div class="img-badge">
+                            <span class="badge-num">4.8</span>
+                            <span class="badge-text">★ Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">A Taste of the <span class="accent">Mediterranean</span> in Old City</h2>
+                    <p class="about-desc">
+                        Nestled in the charming historic streets of Old City Philadelphia, Cafe Olé brings the vibrant flavors of the Mediterranean to your table. From the moment you step through our doors, you're transported to the sun-drenched cafes of Israel, Morocco, and the Middle East.
+                    </p>
+                    <p class="about-desc">
+                        We take pride in every dish — from our legendary shakshuka, prepared fresh in cast iron with eggs poached to perfection, to our slow-roasted shawarma and house-made hummus. Every meal is crafted with love, using the freshest ingredients.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num">500+</span>
+                            <span class="stat-label">Happy Reviews</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">15+</span>
+                            <span class="stat-label">Shakshuka Varieties</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">7</span>
+                            <span class="stat-label">Days a Week</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== MENU PREVIEW =================== -->
+    <section class="menu-preview section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Serve</span>
+                <h2 class="section-title">Our Most <span class="accent">Beloved</span> Dishes</h2>
+                <p class="section-desc">Every dish on our menu is a celebration of Mediterranean tradition, crafted fresh daily with premium ingredients</p>
+            </div>
             <div class="menu-grid">
-                <!-- Menu Category 1 -->
-                <div class="menu-category">
-                    <h3>Signature Shakshuka</h3>
-                    <div class="menu-item">
-                        <h4>House Special Shakshuka</h4>
-                        <p>3 Eggs served with our own freshly baked bread.</p>
-                        <span class="price">$14.25</span>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/shakshuka_hero.png" alt="Classic Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=400&q=80'">
+                        <span class="menu-badge">House Special</span>
                     </div>
-                    <div class="menu-item">
-                        <h4>Morrocan Shakshuka</h4>
-                        <p>Three Eggs, Grilled Chicken, Green Olives, fresh bread.</p>
-                        <span class="price">$17.25</span>
-                    </div>
-                </div>
-
-                <!-- Menu Category 2 -->
-                <div class="menu-category">
-                    <h3>Sandwiches & Salads</h3>
-                    <div class="menu-item">
-                        <h4>Fresh Mozzarella Sandwich</h4>
-                        <p>Tomato, Basil, Roasted Peppers, Kalamata Olives, Pesto and Salsa.</p>
-                        <span class="price">$11.75</span>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Mediterranean Platter</h4>
-                        <p>Hummus, tahini, cucumber, tomato, grape leaves, feta, olives, pita.</p>
-                        <span class="price">$15.95</span>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Classic Shakshuka</h3>
+                            <span class="price">$14.25</span>
+                        </div>
+                        <p>3 eggs poached in our signature spiced tomato sauce with fresh-baked artisan bread</p>
+                        <div class="menu-tags">
+                            <span class="tag">🌶️ Spiced</span>
+                            <span class="tag">🌱 Vegetarian</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Menu Category 3 -->
-                <div class="menu-category">
-                    <h3>Coffee & Espresso</h3>
-                    <div class="menu-item">
-                        <h4>Nutella Latte</h4>
-                        <p>Rich coffee blend with creamy Nutella.</p>
-                        <span class="price">$5.25</span>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/shawarma_dish.png" alt="Shawarma Platter" onerror="this.src='https://images.unsplash.com/photo-1561651188-d207bbec4ec3?w=400&q=80'">
+                        <span class="menu-badge popular">Most Popular</span>
                     </div>
-                    <div class="menu-item">
-                        <h4>Iced Latte</h4>
-                        <p>Refreshing espresso over milk & ice.</p>
-                        <span class="price">$4.95</span>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Shawarma Platter</h3>
+                            <span class="price">$19.95</span>
+                        </div>
+                        <p>Slow-roasted chicken, turkey & lamb with Israeli salad, hummus, tahini & warm pita</p>
+                        <div class="menu-tags">
+                            <span class="tag">🔥 Grilled</span>
+                            <span class="tag">🥗 Fresh</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/mediterranean_spread.png" alt="Mediterranean Spread" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'">
+                        <span class="menu-badge vegan">Vegan</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Vegan Shakshuka</h3>
+                            <span class="price">$15.75</span>
+                        </div>
+                        <p>Tofu, chickpeas, spinach & mushrooms in spiced tomato sauce with fresh bread</p>
+                        <div class="menu-tags">
+                            <span class="tag">🌱 Vegan</span>
+                            <span class="tag">💚 Healthy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/latte_art.png" alt="Artisan Coffee" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80'">
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Artisan Latte</h3>
+                            <span class="price">$5.50</span>
+                        </div>
+                        <p>Expertly pulled espresso with steamed milk, featuring beautiful latte art. Plant-based options available</p>
+                        <div class="menu-tags">
+                            <span class="tag">☕ Coffee</span>
+                            <span class="tag">🌿 Plant-Based Option</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/brunch_spread.png" alt="Hummus Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1540914124281-342587941389?w=400&q=80'">
+                        <span class="menu-badge">Chef's Choice</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Hummus Shakshuka</h3>
+                            <span class="price">$18.25</span>
+                        </div>
+                        <p>Our signature shakshuka served over house-made creamy hummus — an unforgettable combination</p>
+                        <div class="menu-tags">
+                            <span class="tag">🌶️ Spiced</span>
+                            <span class="tag">🌱 Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img-wrap">
+                        <img src="images/mediterranean_spread.png" alt="Moroccan Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80'">
+                        <span class="menu-badge">New</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top">
+                            <h3>Moroccan Shakshuka</h3>
+                            <span class="price">$17.25</span>
+                        </div>
+                        <p>Grilled chicken and green olives in aromatic Moroccan-spiced tomato sauce with fresh bread</p>
+                        <div class="menu-tags">
+                            <span class="tag">🇲🇦 Moroccan</span>
+                            <span class="tag">🍗 Chicken</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="menu-note">
-                <p><em>* This is just a sample of our offerings. Visit us for full breakfast, pastries, and more!</em>
-                </p>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- =================== REVIEWS =================== -->
+    <section class="reviews section" id="reviews">
         <div class="container">
-            <h2>Visit Us</h2>
-            <div class="contact-info">
-                <div class="info-box">
-                    <h3>Location</h3>
-                    <p>147 N 3rd St<br>Philadelphia, PA 19106</p>
-                    <a href="https://www.bing.com/maps/search?q=Cafe+Ole+%2C+147+N+3rd+St%2C+Philadelphia%2C+PA+19106&cp=39.953533%7E-75.144684&lvl=17&style=r"
-                        target="_blank" class="map-link">View on Map</a>
+            <div class="section-header">
+                <span class="section-label">What Guests Say</span>
+                <h2 class="section-title">Loved By <span class="accent">Philadelphia</span></h2>
+                <div class="overall-rating">
+                    <div class="stars-big">★★★★★</div>
+                    <span>4.8 / 5 · 500+ Reviews</span>
                 </div>
-                <div class="info-box">
-                    <h3>Hours</h3>
-                    <p>Monday - Sunday<br>8:00 AM - 6:00 PM</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The shakshuka here is absolutely life-changing! The eggs are perfectly poached and the sauce has just the right amount of spice. Fresh bread to dip — perfection. This is now my go-to brunch spot in Old City."</p>
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div>
+                            <strong>Sarah M.</strong>
+                            <span>Philadelphia, PA</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-box">
-                    <h3>Contact</h3>
-                    <p>Phone: (215) 627-2140<br>Email: phillycafeole@gmail.com</p>
-                    <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" class="social-link">Follow us on
-                        Facebook</a>
+                <div class="review-card featured">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best Mediterranean food in Philly, hands down. The shawarma platter is enormous and incredibly flavorful. The hummus is house-made and you can taste the difference. Staff is super friendly and welcoming. Love this place!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">J</div>
+                        <div>
+                            <strong>James K.</strong>
+                            <span>Center City, Philadelphia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"As a vegan, I'm always nervous at new restaurants — but Cafe Ole completely blew me away. The tofu shakshuka is incredible and they have so many plant-based options. The oat milk latte is also amazing!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div>
+                            <strong>Alex R.</strong>
+                            <span>Fishtown, Philadelphia</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Cafe Ole. All rights reserved.</p>
+    <!-- =================== GALLERY PREVIEW =================== -->
+    <section class="gallery-preview section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Atmosphere</span>
+                <h2 class="section-title">A Place You'll <span class="accent">Love</span> Coming Back To</h2>
+            </div>
+            <div class="gallery-masonry">
+                <div class="gallery-item tall">
+                    <img src="images/cafe_interior.png" alt="Cafe Ole interior" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80'">
+                    <div class="gallery-overlay"><span>Cozy Atmosphere</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/shakshuka_hero.png" alt="Shakshuka" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=400&q=80'">
+                    <div class="gallery-overlay"><span>Signature Shakshuka</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/latte_art.png" alt="Artisan coffee" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80'">
+                    <div class="gallery-overlay"><span>Artisan Coffee</span></div>
+                </div>
+                <div class="gallery-item tall">
+                    <img src="images/cafe_exterior.png" alt="Cafe Ole exterior" onerror="this.src='https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=400&q=80'">
+                    <div class="gallery-overlay"><span>Old City Location</span></div>
+                </div>
+                <div class="gallery-item wide">
+                    <img src="images/mediterranean_spread.png" alt="Mediterranean spread" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80'">
+                    <div class="gallery-overlay"><span>Mediterranean Spread</span></div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="gallery.html" class="btn btn-outline">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== CTA BANNER =================== -->
+    <section class="cta-banner">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to Experience Cafe Olé?</h2>
+            <p>Visit us in Old City Philadelphia or order online through your favorite delivery app</p>
+            <div class="cta-btns">
+                <a href="order.html" class="btn btn-primary btn-lg">Order Online</a>
+                <a href="contact.html" class="btn btn-white btn-lg">Get Directions</a>
+            </div>
+            <div class="delivery-apps">
+                <span>Available on:</span>
+                <div class="app-links">
+                    <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="app-link" id="uber-eats-link">
+                        <i class="fas fa-motorcycle"></i> Uber Eats
+                    </a>
+                    <a href="https://www.grubhub.com" target="_blank" rel="noopener" class="app-link" id="grubhub-link">
+                        <i class="fas fa-utensils"></i> Grubhub
+                    </a>
+                    <a href="https://www.doordash.com" target="_blank" rel="noopener" class="app-link" id="doordash-link">
+                        <i class="fas fa-door-open"></i> DoorDash
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== HOURS & LOCATION =================== -->
+    <section class="location-section section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info">
+                    <span class="section-label">Visit Us</span>
+                    <h2 class="section-title">Find Us in <span class="accent">Old City</span></h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <strong>Address</strong>
+                                <p>147 N 3rd Street<br>Philadelphia, PA 19106<br>Old City Neighborhood</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <strong>Phone</strong>
+                                <p><a href="tel:+12156272140">(215) 627-2140</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <strong>Hours</strong>
+                                <p>Monday – Sunday<br>8:00 AM – 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hours-grid">
+                        <div class="hours-row">
+                            <span>Monday – Friday</span>
+                            <span class="hours-open">8:00 AM – 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Saturday – Sunday</span>
+                            <span class="hours-open">8:00 AM – 6:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" class="social-btn" id="facebook-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-btn" id="instagram-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn" id="twitter-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8!2d-75.144684!3d39.953533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c88e09abfaef%3A0x1a6b89c9a0b5a22a!2sCafe%20Ole!5e0!3m2!1sen!2sus!4v1"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Cafe Ole location map">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=147+N+3rd+St+Philadelphia+PA+19106" target="_blank" rel="noopener" class="btn btn-primary directions-btn" id="directions-btn">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <span>☕</span> Cafe Olé
+                        </a>
+                        <p>Authentic Mediterranean cafe & brunch in the heart of Old City Philadelphia. Fresh, vibrant flavors served with love every day.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="order.html">Order Online</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Our Menu</h4>
+                        <ul>
+                            <li><a href="menu.html#shakshuka">Shakshuka</a></li>
+                            <li><a href="menu.html#shawarma">Shawarma</a></li>
+                            <li><a href="menu.html#sandwiches">Sandwiches</a></li>
+                            <li><a href="menu.html#coffee">Coffee & Drinks</a></li>
+                            <li><a href="menu.html#vegan">Vegan Options</a></li>
+                            <li><a href="menu.html#breakfast">Breakfast</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 147 N 3rd St, Philadelphia, PA 19106</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12156272140">(215) 627-2140</a></p>
+                        <p><i class="fas fa-clock"></i> Mon–Sun: 8:00 AM – 6:00 PM</p>
+                        <p><i class="fas fa-facebook"></i> <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener">@PhillyCafeOle</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Cafe Olé Old City. All rights reserved. | 147 N 3rd St, Philadelphia, PA 19106</p>
+                <p class="footer-credits">Crafted with ❤️ for Old City Philadelphia</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
+    <script src="js/main.js"></script>
+</body>
 </html>

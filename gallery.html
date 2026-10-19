@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo gallery of Cafe Ole Old City Philadelphia - See our food, atmosphere, and the beautiful Old City neighborhood.">
+    <title>Gallery | Cafe Ole Old City – Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .gallery-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        .gallery-main-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .gallery-main-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+        .gallery-main-item.tall { aspect-ratio: 3/4; }
+        .gallery-main-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+        .gallery-main-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        .gallery-main-item:hover img { transform: scale(1.08); }
+        .gallery-main-item .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .gallery-main-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h4 { color: white; font-family: var(--font-heading); font-size: 1rem; }
+        .gallery-overlay span { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+        .gallery-expand {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        .gallery-expand:hover { background: rgba(200,129,58,0.8); }
+        @media (max-width: 768px) {
+            .gallery-main-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-main-item.wide { grid-column: span 2; }
+            .gallery-main-item.tall { aspect-ratio: 4/3; }
+        }
+        @media (max-width: 480px) {
+            .gallery-main-grid { grid-template-columns: 1fr; }
+            .gallery-main-item.wide { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <div class="logo-text">
+                    <span class="logo-main">Cafe Ole</span>
+                    <span class="logo-sub">Old City · Philadelphia</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="order.html" class="nav-link nav-cta">Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <span class="page-hero-badge">📸 Visual Journey</span>
+        <h1>Our <span class="accent">Gallery</span></h1>
+        <p>Explore the flavors, atmosphere, and beauty of Cafe Olé in Old City Philadelphia</p>
+    </section>
+
+    <section class="section" style="background: var(--color-bg);">
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="gallery-tabs">
+                <button class="filter-tab active" onclick="filterGallery('all', this)">All Photos</button>
+                <button class="filter-tab" onclick="filterGallery('food', this)">Food</button>
+                <button class="filter-tab" onclick="filterGallery('drinks', this)">Drinks</button>
+                <button class="filter-tab" onclick="filterGallery('interior', this)">Interior</button>
+                <button class="filter-tab" onclick="filterGallery('exterior', this)">Exterior</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-main-grid" id="galleryGrid">
+                <div class="gallery-main-item wide" data-cat="food">
+                    <img src="images/shakshuka_hero.png" alt="Classic Shakshuka at Cafe Ole" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=800&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Classic Shakshuka</h4>
+                        <span>Our signature dish</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item tall" data-cat="interior">
+                    <img src="images/cafe_interior.png" alt="Cafe Ole interior" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Cozy Interior</h4>
+                        <span>Our warm atmosphere</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item" data-cat="drinks">
+                    <img src="images/latte_art.png" alt="Artisan latte coffee" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Artisan Latte</h4>
+                        <span>Expertly crafted coffee</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item" data-cat="food">
+                    <img src="images/shawarma_dish.png" alt="Shawarma platter" onerror="this.src='https://images.unsplash.com/photo-1561651188-d207bbec4ec3?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Shawarma Platter</h4>
+                        <span>Mediterranean feast</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item" data-cat="food">
+                    <img src="images/mediterranean_spread.png" alt="Mediterranean spread" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Mediterranean Spread</h4>
+                        <span>Fresh and vibrant flavors</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item tall" data-cat="exterior">
+                    <img src="images/cafe_exterior.png" alt="Cafe Ole Old City exterior" onerror="this.src='https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Old City Location</h4>
+                        <span>147 N 3rd Street</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item" data-cat="food">
+                    <img src="images/brunch_spread.png" alt="Brunch spread" onerror="this.src='https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Brunch Time</h4>
+                        <span>Weekend favorites</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item wide" data-cat="interior">
+                    <img src="images/cafe_interior.png" alt="Cafe ambiance" onerror="this.src='https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Morning Ambiance</h4>
+                        <span>Start your day right</span>
+                    </div>
+                </div>
+                <div class="gallery-main-item" data-cat="drinks">
+                    <img src="images/latte_art.png" alt="Chai latte" onerror="this.src='https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80'">
+                    <div class="gallery-overlay">
+                        <h4>Chai Latte</h4>
+                        <span>Warm and spiced</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram CTA -->
+    <section class="section" style="background: var(--color-bg-card);">
+        <div class="container" style="text-align: center;">
+            <span class="section-label">Social Media</span>
+            <h2 class="section-title">Follow Us on <span class="accent">Social</span></h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Stay connected for daily specials, new menu items, and a peek behind the scenes at Cafe Olé
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" class="btn btn-outline" id="fb-gallery-link">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener" class="btn btn-primary" id="ig-gallery-link">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo"><span>☕</span> Cafe Olé</a>
+                        <p>Authentic Mediterranean cafe & brunch in the heart of Old City Philadelphia.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Our Menu</h4>
+                        <ul>
+                            <li><a href="menu.html#shakshuka">Shakshuka</a></li>
+                            <li><a href="menu.html#shawarma">Shawarma</a></li>
+                            <li><a href="menu.html#sandwiches">Sandwiches</a></li>
+                            <li><a href="menu.html#coffee">Coffee & Drinks</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 147 N 3rd St, Philadelphia, PA 19106</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12156272140">(215) 627-2140</a></p>
+                        <p><i class="fas fa-clock"></i> Mon–Sun: 8:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Cafe Olé Old City. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterGallery(cat, btn) {
+            document.querySelectorAll('.gallery-tabs .filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.gallery-main-item').forEach(item => {
+                if (cat === 'all' || item.dataset.cat === cat) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox for gallery
+        document.querySelectorAll('.gallery-main-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const overlay = this.querySelector('.gallery-overlay h4');
+                if (img) {
+                    const lightbox = document.createElement('div');
+                    lightbox.className = 'lightbox active';
+                    lightbox.innerHTML = `
+                        <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+                        <img src="${img.src}" alt="${img.alt}">
+                    `;
+                    document.body.appendChild(lightbox);
+                    document.body.style.overflow = 'hidden';
+                    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+                        lightbox.remove();
+                        document.body.style.overflow = '';
+                    });
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) {
+                            lightbox.remove();
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

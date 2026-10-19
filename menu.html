@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Cafe Ole's full menu - Shakshuka, Shawarma, Mediterranean plates, artisan coffee, and more. Order online or visit us at 147 N 3rd St, Philadelphia, PA.">
+    <title>Menu | Cafe Ole Old City – Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <div class="logo-text">
+                    <span class="logo-main">Cafe Ole</span>
+                    <span class="logo-sub">Old City · Philadelphia</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="order.html" class="nav-link nav-cta">Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="page-hero-badge">🍽️ Our Offerings</span>
+        <h1>Our <span class="accent">Menu</span></h1>
+        <p>Fresh Mediterranean flavors made from scratch every day. From our legendary shakshuka to artisan coffee — there's something for everyone.</p>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="section" style="background: var(--color-bg);">
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="menu-filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Items</button>
+                <button class="filter-tab" data-filter="shakshuka">Shakshuka</button>
+                <button class="filter-tab" data-filter="shawarma">Shawarma</button>
+                <button class="filter-tab" data-filter="sandwiches">Sandwiches</button>
+                <button class="filter-tab" data-filter="breakfast">Breakfast</button>
+                <button class="filter-tab" data-filter="coffee">Coffee & Drinks</button>
+                <button class="filter-tab" data-filter="vegan">Vegan</button>
+            </div>
+
+            <!-- SHAKSHUKA -->
+            <div data-category="shakshuka" id="shakshuka">
+                <h2 class="menu-category-title">🥚 Shakshuka</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 28px;">Our signature dish — eggs poached in rich, spiced tomato sauce, served with freshly baked artisan bread. All shakshuka variations can be made vegetarian or vegan.</p>
+                <div class="menu-list-grid">
+                    <div class="menu-list-item">
+                        <img src="images/shakshuka_hero.png" alt="Classic Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Classic Shakshuka</h4>
+                            <p>3 eggs in our signature spiced tomato sauce with fresh-baked artisan bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegetarian</span></div>
+                                <span class="price">$14.25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/shawarma_dish.png" alt="Moroccan Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1611950710408-f7da67a5451d?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Moroccan Shakshuka</h4>
+                            <p>3 eggs, grilled chicken, and green olives in Moroccan-spiced tomato sauce with fresh bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🇲🇦 Moroccan</span></div>
+                                <span class="price">$17.25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Vegetable Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Vegetable Shakshuka</h4>
+                            <p>Spinach, chickpeas, potatoes & mushrooms in spiced tomato sauce with fresh bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegan</span></div>
+                                <span class="price">$13.75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/shakshuka_hero.png" alt="Tofu Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1530710576967-72e42ee99f5d?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Tofu Shakshuka</h4>
+                            <p>Silken tofu in place of eggs, cooked in our signature spiced tomato sauce — fully vegan</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌿 Vegan</span></div>
+                                <span class="price">$15.25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Hummus Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1540914124281-342587941389?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Hummus Shakshuka</h4>
+                            <p>Classic shakshuka served over a bed of house-made creamy hummus — an absolute must-try</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">⭐ Chef's Pick</span></div>
+                                <span class="price">$18.25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Veggie Hummus Shakshuka" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Veggie Hummus Shakshuka</h4>
+                            <p>Vegetable shakshuka served over house-made hummus with fresh artisan bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegan</span></div>
+                                <span class="price">$19.75</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHAWARMA -->
+            <div data-category="shawarma" id="shawarma">
+                <h2 class="menu-category-title">🥙 Shawarma</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 28px;">Slow-roasted meats with Israeli salad, hummus, tahini, and warm pita. A true Mediterranean feast.</p>
+                <div class="menu-list-grid">
+                    <div class="menu-list-item">
+                        <img src="images/shawarma_dish.png" alt="Shawarma Sandwich" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1561651188-d207bbec4ec3?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Shawarma Sandwich</h4>
+                            <p>Chicken, turkey & lamb in warm pita with Israeli salad, tahini, hummus & pickles</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🔥 Grilled</span></div>
+                                <span class="price">$16.95</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/shawarma_dish.png" alt="Shawarma Platter" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1561651188-d207bbec4ec3?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Shawarma Platter</h4>
+                            <p>Full platter with slow-roasted meats, Israeli salad, hummus, tahini, pickles & pita bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🥗 Full Meal</span><span class="tag">⭐ Popular</span></div>
+                                <span class="price">$19.95</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Small Hummus Plate" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1540914124281-342587941389?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Hummus Plate</h4>
+                            <p>House-made creamy hummus with warm pita bread and fresh Israeli salad</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegan</span></div>
+                                <span class="price">$9.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Falafel Plate" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1593001872095-7d5b3868fb1d?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Falafel Pita</h4>
+                            <p>Crispy herb falafel in warm pita with tahini, Israeli salad & fresh vegetables</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegan</span></div>
+                                <span class="price">$14.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SANDWICHES -->
+            <div data-category="sandwiches" id="sandwiches">
+                <h2 class="menu-category-title">🥪 Sandwiches</h2>
+                <div class="menu-list-grid">
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Grilled Cheese" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1528736235302-52922df5c122?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>European Grilled Cheese</h4>
+                            <p>Feta, Muenster, garlic spread, tomato, olives, spinach & mushrooms on artisan bread</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegetarian</span></div>
+                                <span class="price">$12.95</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Chicken Mozzarella" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1528736235302-52922df5c122?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Chicken Mozzarella Sandwich</h4>
+                            <p>Grilled chicken breast with fresh mozzarella, pesto, tomato on toasted ciabatta</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🍗 Chicken</span></div>
+                                <span class="price">$14.25</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Smoked Turkey" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1528736235302-52922df5c122?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Smoked Turkey Breast Sandwich</h4>
+                            <p>Sliced smoked turkey with lettuce, tomato, avocado & honey mustard on multigrain</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🦃 Turkey</span></div>
+                                <span class="price">$13.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Bagel Egg Cheese" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1525351484163-7529414344d8?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Bagel Egg & Cheese</h4>
+                            <p>Fresh egg and melted cheese on a toasted bagel — a classic Philly breakfast</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🍳 Breakfast</span></div>
+                                <span class="price">$9.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BREAKFAST -->
+            <div data-category="breakfast" id="breakfast">
+                <h2 class="menu-category-title">🌅 Breakfast</h2>
+                <div class="menu-list-grid">
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Croissant Egg Cheese" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Croissant Egg & Cheese</h4>
+                            <p>Flaky butter croissant with scrambled egg and melted cheese, served warm</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🥐 Fresh</span></div>
+                                <span class="price">$9.75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/mediterranean_spread.png" alt="Hummus Plate" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1540914124281-342587941389?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Hummus & Pita Breakfast Plate</h4>
+                            <p>Small plate of house-made hummus with warm pita and fresh Israeli salad</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌱 Vegan</span></div>
+                                <span class="price">$8.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Peanut Butter Banana Smoothie" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1553530666-ba11a90bb4ae?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>PB Banana Smoothie</h4>
+                            <p>Peanut butter, banana, almond milk and honey blended to silky perfection</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🥤 Smoothie</span><span class="tag">🌿 Healthy</span></div>
+                                <span class="price">$7.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Granola Bowl" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1494597564530-871f2b93ac55?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Granola & Yogurt Bowl</h4>
+                            <p>House granola with Greek yogurt, seasonal fruits, honey and chia seeds</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌿 Healthy</span></div>
+                                <span class="price">$10.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COFFEE & DRINKS -->
+            <div data-category="coffee" id="coffee">
+                <h2 class="menu-category-title">☕ Coffee & Drinks</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 28px;">Plant-based milk alternatives available upon request (oat, almond, soy).</p>
+                <div class="menu-list-grid">
+                    <div class="menu-list-item">
+                        <img src="images/latte_art.png" alt="Latte" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Artisan Latte</h4>
+                            <p>Expertly pulled espresso with steamed milk and beautiful latte art</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌿 Plant-Based Option</span></div>
+                                <span class="price">$5.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/latte_art.png" alt="Iced Coffee" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Iced Coffee</h4>
+                            <p>Cold-brewed coffee over ice, available in classic or flavored varieties</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🧊 Cold</span></div>
+                                <span class="price">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/latte_art.png" alt="Chai Tea Latte" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Chai Tea Latte</h4>
+                            <p>Warm spiced chai blend with steamed milk — comforting and aromatic</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🌿 Plant-Based Option</span></div>
+                                <span class="price">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/latte_art.png" alt="Cappuccino" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1534778101976-62847782c213?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Cappuccino</h4>
+                            <p>Equal parts espresso, steamed milk and velvety foam — an Italian classic</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">☕ Classic</span></div>
+                                <span class="price">$4.75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/brunch_spread.png" alt="Fresh Orange Juice" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Fresh Orange Juice</h4>
+                            <p>Freshly squeezed oranges, served ice cold — pure and natural</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">🍊 Fresh</span></div>
+                                <span class="price">$5.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-list-item">
+                        <img src="images/latte_art.png" alt="Espresso" class="menu-item-img" onerror="this.src='https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=80&q=80'">
+                        <div class="menu-item-info">
+                            <h4>Espresso</h4>
+                            <p>Single or double shot of rich, full-bodied espresso</p>
+                            <div class="menu-item-bottom">
+                                <div class="menu-tags"><span class="tag">💪 Strong</span></div>
+                                <span class="price">$3.50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order CTA -->
+    <section class="cta-banner">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to Order?</h2>
+            <p>Order online through your favorite delivery app or visit us in Old City Philadelphia</p>
+            <div class="cta-btns">
+                <a href="order.html" class="btn btn-primary btn-lg">Order Online</a>
+                <a href="contact.html" class="btn btn-white btn-lg">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo"><span>☕</span> Cafe Olé</a>
+                        <p>Authentic Mediterranean cafe & brunch in the heart of Old City Philadelphia.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Menu Sections</h4>
+                        <ul>
+                            <li><a href="#shakshuka">Shakshuka</a></li>
+                            <li><a href="#shawarma">Shawarma</a></li>
+                            <li><a href="#sandwiches">Sandwiches</a></li>
+                            <li><a href="#coffee">Coffee & Drinks</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 147 N 3rd St, Philadelphia, PA 19106</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12156272140">(215) 627-2140</a></p>
+                        <p><i class="fas fa-clock"></i> Mon–Sun: 8:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Cafe Olé Old City. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html>

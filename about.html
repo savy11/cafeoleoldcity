@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Cafe Ole Old City - Our story, our mission, and our passion for authentic Mediterranean food in Old City Philadelphia.">
+    <title>About Us | Cafe Ole Old City – Philadelphia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .value-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(200, 129, 58, 0.4);
+            box-shadow: var(--shadow-glow);
+        }
+        .value-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+        .value-card h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text); margin-bottom: 12px; }
+        .value-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
+        .team-section { background: var(--color-bg-card); }
+        .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .story-img { border-radius: var(--radius-lg); width: 100%; height: 480px; object-fit: cover; box-shadow: var(--shadow-lg); }
+        .story-content p { color: var(--color-text-muted); line-height: 1.9; font-size: 1.05rem; margin-bottom: 20px; }
+        .amenities-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+        .amenity { display: flex; align-items: center; gap: 8px; background: rgba(200,129,58,0.1); border: 1px solid rgba(200,129,58,0.2); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; color: var(--color-primary-light); }
+        .awards-bar { background: var(--color-secondary); padding: 60px 0; }
+        .awards-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 48px; }
+        .award-item { text-align: center; color: var(--color-text); }
+        .award-num { font-size: 2.5rem; font-weight: 700; font-family: var(--font-heading); color: var(--color-accent); display: block; }
+        .award-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+        @media (max-width: 768px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .story-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <div class="logo-text">
+                    <span class="logo-main">Cafe Ole</span>
+                    <span class="logo-sub">Old City · Philadelphia</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="order.html" class="nav-link nav-cta">Order Now</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <span class="page-hero-badge">🌿 Our Story</span>
+        <h1>About <span class="accent">Cafe Olé</span></h1>
+        <p>A passionate story of Mediterranean flavors, community, and the love of bringing people together over great food.</p>
+    </section>
+
+    <!-- Awards Bar -->
+    <div class="awards-bar">
+        <div class="container">
+            <div class="awards-row">
+                <div class="award-item">
+                    <span class="award-num">4.8★</span>
+                    <span class="award-label">Average Rating</span>
+                </div>
+                <div class="award-item">
+                    <span class="award-num">500+</span>
+                    <span class="award-label">5-Star Reviews</span>
+                </div>
+                <div class="award-item">
+                    <span class="award-num">7</span>
+                    <span class="award-label">Days a Week</span>
+                </div>
+                <div class="award-item">
+                    <span class="award-num">10+</span>
+                    <span class="award-label">Years Serving Philly</span>
+                </div>
+                <div class="award-item">
+                    <span class="award-num">100%</span>
+                    <span class="award-label">Fresh Ingredients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="section" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="story-layout">
+                <img src="images/cafe_exterior.png" alt="Cafe Ole Old City exterior" class="story-img" onerror="this.src='https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80'">
+                <div class="story-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">Born from a <span class="accent">Passion</span> for Mediterranean Flavors</h2>
+                    <p>
+                        Cafe Olé was born from a deep love of Mediterranean cuisine and a desire to share those vibrant flavors with the people of Philadelphia. Nestled in the heart of Old City — one of Philly's most historic and charming neighborhoods — we've created a warm, welcoming space where great food meets great company.
+                    </p>
+                    <p>
+                        Our menu draws inspiration from the sun-drenched kitchens of Israel, Morocco, and the greater Mediterranean region. The centerpiece of our kitchen is the iconic shakshuka — eggs poached in richly spiced tomato sauce, served with artisan bread made fresh every morning. It's a dish that captures everything we believe in: simplicity, quality, and soul.
+                    </p>
+                    <p>
+                        Every ingredient that enters our kitchen is chosen with care. Our hummus is made in-house. Our bread is baked fresh daily. Our shawarma is slow-roasted with care and love. We believe that food should be honest, nourishing, and deeply satisfying.
+                    </p>
+                    <div class="amenities-list">
+                        <span class="amenity">🐾 Pet Friendly</span>
+                        <span class="amenity">📶 Free WiFi</span>
+                        <span class="amenity">🌱 Vegan Options</span>
+                        <span class="amenity">🍷 Dine-In</span>
+                        <span class="amenity">🚗 Takeout</span>
+                        <span class="amenity">🛵 Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section" style="background: var(--color-bg-card);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Stand For</span>
+                <h2 class="section-title">Our <span class="accent">Values</span></h2>
+                <p class="section-desc">Everything we do is guided by a commitment to quality, community, and authenticity</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🌿</span>
+                    <h3>Fresh & Honest</h3>
+                    <p>We use only the freshest ingredients, sourced locally when possible. No shortcuts, no compromises — just real, honest food made from scratch every day.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🤝</span>
+                    <h3>Community First</h3>
+                    <p>We're more than a cafe — we're a neighborhood gathering place. We're proud to be part of the vibrant Old City community and serve our neighbors every day.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌍</span>
+                    <h3>Cultural Authenticity</h3>
+                    <p>Our recipes honor the traditions of Mediterranean cuisine. We take pride in preserving the authentic flavors and techniques that make this food so special.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌱</span>
+                    <h3>Inclusive for All</h3>
+                    <p>From vegan shakshuka to gluten-conscious options, we believe great food should be accessible and delicious for everyone, regardless of dietary preferences.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">💚</span>
+                    <h3>Sustainably Minded</h3>
+                    <p>We're committed to responsible practices — from reducing food waste to supporting local suppliers and using eco-friendly packaging for our takeout orders.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">❤️</span>
+                    <h3>Made with Love</h3>
+                    <p>Every shakshuka, every cup of coffee, every shawarma sandwich is made with genuine care and passion. You can taste the difference when food is made with heart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Story -->
+    <section class="section" style="background: var(--color-bg);">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-content">
+                    <span class="section-label">Our Neighborhood</span>
+                    <h2 class="section-title">In the Heart of <span class="accent">Old City</span></h2>
+                    <p>
+                        Old City Philadelphia is one of America's most historic neighborhoods — home to Independence Hall, the Liberty Bell, and centuries of American history. It's also a vibrant, artistic community filled with galleries, boutiques, restaurants, and creative spaces.
+                    </p>
+                    <p>
+                        Our cafe at 147 N 3rd Street sits right in the center of this energy. We're a short walk from some of Philly's most beloved landmarks and surrounded by an incredible community of residents, artists, tourists, and professionals who make up our daily family of guests.
+                    </p>
+                    <p>
+                        Whether you're stopping in for a quick coffee before touring the historic district, or settling in for a long Mediterranean brunch with friends, Cafe Olé is your home base in Old City.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 12px;">
+                        <i class="fas fa-map-marker-alt"></i> Get Directions
+                    </a>
+                </div>
+                <img src="images/cafe_interior.png" alt="Inside Cafe Ole Old City" class="story-img" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Come Visit Us Today</h2>
+            <p>Experience the warmth and flavor of Cafe Olé — Old City Philadelphia's Mediterranean gem</p>
+            <div class="cta-btns">
+                <a href="menu.html" class="btn btn-primary btn-lg">Browse Menu</a>
+                <a href="contact.html" class="btn btn-white btn-lg">Find Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo"><span>☕</span> Cafe Olé</a>
+                        <p>Authentic Mediterranean cafe & brunch in the heart of Old City Philadelphia.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/PhillyCafeOle/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Our Menu</h4>
+                        <ul>
+                            <li><a href="menu.html#shakshuka">Shakshuka</a></li>
+                            <li><a href="menu.html#shawarma">Shawarma</a></li>
+                            <li><a href="menu.html#sandwiches">Sandwiches</a></li>
+                            <li><a href="menu.html#coffee">Coffee & Drinks</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 147 N 3rd St, Philadelphia, PA 19106</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+12156272140">(215) 627-2140</a></p>
+                        <p><i class="fas fa-clock"></i> Mon–Sun: 8:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Cafe Olé Old City. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html>
